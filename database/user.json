@@ -1,7 +1,17 @@
 [
-    {
-        "id": 1,
-        "password": "Bob",
-        "email": "bob@example.com"
-    }
+  {
+    "id": 1,
+    "password": "Bob",
+    "email": "bob@example.com"
+  },
+  {
+    "id": 2,
+    "email": "fayi@gmail.com",
+    "password": "123"
+  },
+  {
+    "id": 3,
+    "email": "akram@gmail.com",
+    "password": "123"
+  }
 ]

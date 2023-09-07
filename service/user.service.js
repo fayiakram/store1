@@ -5,10 +5,30 @@ class UserService {
         this.userModel = new UserModel;
     }
 
-    async findByEmail() {
+    async findByEmail(inputEmail) {
         const email = await this.userModel.findByEmail(inputEmail);
-        if (email) {
+        return email;
 
+    }
+
+    async registration(payload) {
+        // validasi user terdaftar atau belum
+        try {
+            const { email } = payload;
+            const user = await this.findByEmail(email);
+
+            if (user) {
+                throw new Error("User sudah terdaftar");
+            }
+
+            // store data to db
+            const userNew = new UserModel(payload.id, payload.email, payload.password);
+            await this.userModel.save(userNew);
+
+            return "User berhasil disimpan"
+
+        } catch (error) {
+            throw error;
 
         }
     }

@@ -14,7 +14,7 @@ class UserModel {
     async findByEmail(inputEmail) {
         try {
             const users = await this.connect();
-            const userWithEmail = users.find(user => user.email === inputEmail);
+            const userWithEmail = users.find((user) => user.email === inputEmail);
             return userWithEmail;
         } catch (error) {
             console.error(error);
@@ -26,7 +26,7 @@ class UserModel {
         try {
             const data = await this.connect();
             data.push(body);
-            await fs.writeFile("./database/mamalia.json", JSON.stringify(data, null, 2));
+            await fs.writeFile("./database/user.json", JSON.stringify(data, null, 2));
         } catch (error) {
             console.error(error);
         }
