@@ -6,6 +6,17 @@ class UserController {
         this.userService = new UserService;
     }
 
+    async login(req, res) {
+
+        // sesuikan req dan response sesuai fitur login
+        // payload atau request body { email, password };
+
+        res.writeHead(400, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ message: "service belum di buat!", status: "fail", code: 400 }, null, 2));
+    }
+
+
+
     async registration(req, res) {
         // mapping body
         let body = "";

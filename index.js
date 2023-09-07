@@ -1,14 +1,23 @@
 // Ini import module HTTP
 const http = require("http");
+const url = require('url');
+
 const UserController = require("./controller/user.controller");
 
 const server = http.createServer(async (req, res) => {
-    const method = req.method;
+    // const method = req.method;
+    const parsedUrl = url.parse(req.url, true);
     const userController = new UserController();
-    switch (method) {
+    switch (parsedUrl.pathname) {
 
-        case "POST":
+        case "/registrasi":
+
             await userController.registration(req, res);
+
+            break;
+        case "/login":
+
+            await userController.login(req, res);
 
             break;
 

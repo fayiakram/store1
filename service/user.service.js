@@ -32,6 +32,16 @@ class UserService {
 
         }
     }
+
+    /**
+  * ini service login
+  * @param {*} payload 
+  */
+    async login(payload) {
+        // 1 validasi email, email terdaftar atau tidak, kalau tidak errorkan user tidak terdaftar.
+        // 2 check password, kalau sama sukses kalau beda trow error password tidak sesuai
+        // 3 kasih message berhasil login ketika email dan password berhasil. 
+    }
 }
 
 module.exports = UserService;
